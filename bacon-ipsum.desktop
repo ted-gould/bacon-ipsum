@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Bacon Ipsum
+Comment=Making your text full of bacon-y goodness
+Exec=qmlscene bacon-ipsum.qml
+Icon=bacon-ipsum-logo.svg
+Terminal=false
+Type=Application
+X-Ubuntu-Touch=true
+
