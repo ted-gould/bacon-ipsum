@@ -17,6 +17,17 @@ MainView {
 			id: root
 			title: qsTr("Bacon Ipsum")
 
+			head.actions: [
+				Action {
+					id: refresh
+					text: "Refresh"
+					iconName: "reload"
+					onTriggered: {
+						root.baconRefresh()
+					}
+				}
+			]
+
 			Column {
 				anchors.fill: parent
 				anchors.leftMargin: units.gu(1.5)
@@ -66,16 +77,20 @@ MainView {
 			} // Column
 
 			Component.onCompleted: {
-					request('https://baconipsum.com/api/?type=meat-and-filler', function (o) {
-							
-							// translate response into object
-							var d = eval(o.responseText);
+				baconRefresh()
+			}
 
-							// access elements inside json object with dot notation
-							if (d) {
-								bacontext.text = d[0]
-							}
-						});
+			function baconRefresh() {
+				request('https://baconipsum.com/api/?type=meat-and-filler', function (o) {
+						
+						// translate response into object
+						var d = eval(o.responseText);
+
+						// access elements inside json object with dot notation
+						if (d) {
+							bacontext.text = d[0]
+						}
+					});
 			}
 
 			function request(url, callback) {
