@@ -137,6 +137,7 @@ MainView {
 		id: picker
 		property var text
 		visible: false
+		header: null
 
 		Component {
 			id: resultComponent
@@ -171,15 +172,26 @@ MainView {
 		title: i18n.tr("Settings")
 		visible: false
 
-		ListView {
+		Column {
 			anchors.fill: parent
 
-			Standard {
-				text: "Test"
+			/* Added a selector, but turns out none of these have
+			   an API :-( */
+			/*
+			Header {
+				text: i18n.tr("Ipsum Type:")
 			}
-			Standard {
-				text: "Test2"
+			ItemSelector {
+				model: [
+					i18n.tr("Bacon"),
+					i18n.tr("Fish"),
+					i18n.tr("Veggie"),
+					i18n.tr("Traditional")
+				]
 			}
+
+			Divider {}
+			*/
 		}
 	}
 
