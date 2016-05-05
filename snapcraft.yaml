@@ -1,7 +1,6 @@
 name: bacon-ipsum
 version: 0.1
 summary: Bacon Ipsum
-icon: bacon-ipsum-logo.svg
 description: Making your text full of bacon-y goodness
 architectures: ["all"]
 
@@ -16,9 +15,9 @@ parts:
 apps:
   bacon:
     command: qmlscene bacon-ipsum.qml
-    uses: ["switching", "network-client", "content"]
+    plugs: ["switching", "network-client", "content"]
 
-uses:
+plugs:
   switching:
     type: application-manager
     icon: bacon-ipsum-logo.svg
