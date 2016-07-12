@@ -15,14 +15,5 @@ parts:
 apps:
   bacon:
     command: qmlscene bacon-ipsum.qml
-    plugs: ["switching", "network-client", "content"]
+    plugs: ["unity8", "network-client"]
 
-plugs:
-  switching:
-    type: application-manager
-    icon: bacon-ipsum-logo.svg
-    title: Bacon Ipsum
-  content:
-    type: content-hub
-    source:
-      - text

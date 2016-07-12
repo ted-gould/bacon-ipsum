@@ -1,0 +1,6 @@
+[Desktop Entry]
+Version=1.0
+Name=Bacon Ipsum
+Type=Application
+Exec=bacon %f
+Icon=bacon-ipsum-logo.svg
