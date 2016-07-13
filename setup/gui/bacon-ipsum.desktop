@@ -2,5 +2,5 @@
 Version=1.0
 Name=Bacon Ipsum
 Type=Application
-Exec=bacon %f
+Exec=bacon-ipsum %f
 Icon=bacon-ipsum-logo.svg

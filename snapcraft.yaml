@@ -11,9 +11,15 @@ parts:
       bacon-ipsum-logo.svg: bacon-ipsum-logo.svg
       bacon-ipsum-pig.png: bacon-ipsum-pig.png
       bacon-ipsum.qml: bacon-ipsum.qml
+      bacon-ipsum.sh: bacon-ipsum.sh
+    after: ["desktop/qt5"]
+    stage-packages:
+      - qmlscene
+      - qml-module-ubuntu-components
+      - qtdeclarative5-ubuntu-content1
 
 apps:
-  bacon:
-    command: qmlscene bacon-ipsum.qml
-    plugs: ["unity8", "network-client"]
+  bacon-ipsum:
+    command: desktop-launch $SNAP/bacon-ipsum.sh
+    plugs: ["unity7", "network-client"]
 
